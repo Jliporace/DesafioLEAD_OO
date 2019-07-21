@@ -64,7 +64,7 @@ void Filter::movingAverage(int numSamples)
 	}
 	//Zeros addition to fullData in order to compute the first <numSamples> movingAverage
 	vector <int> zerosV (numSamples,0); 
-	data.insert(data.begin(), zerosV.begin(), zerosV.end());
+	this->data.insert(data.begin(), zerosV.begin(), zerosV.end());
 	
 	//The movingAverage correspondent to the x[n] element is sum(x[n-numSamples]:x[n])/numSamples
 	for (int i = numSamples; i<this->data.size(); i = i+1)
@@ -79,6 +79,7 @@ void Filter::movingAverage(int numSamples)
 		
 	}
 	file.close();
+    this->data.erase(data.begin(), data.begin()+numSamples);
 	return;
 }
 
