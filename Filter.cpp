@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "header.h"
+#include "Filter.hpp"
 
 using namespace std;
 
